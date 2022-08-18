@@ -1,10 +1,9 @@
 # Container image that runs your code
 # FROM alpine:3.10
-# FROM node:12.18.1
-FROM ghcr.io/guardiandirect/app-base-node/app-base-node:v0.2.8
+FROM node:16
 
 WORKDIR /usr/src/app
-ENV NODE_ENV production
+#ENV NODE_ENV production
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY package.json .
