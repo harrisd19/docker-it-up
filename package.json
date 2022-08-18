@@ -1,0 +1,17 @@
+{
+  "name": "tfcloud-provider-registry-uploader-action",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Custom GitHub Action that takes all artifact files from goreleaser and uploads them to terrform cloud",
+  "main": "'dist/index.js'",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt"
+  },
+  "author": "Devon Harris",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.1"
+  }
+}
