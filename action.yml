@@ -8,7 +8,6 @@ inputs:
     default: '/dist'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
-  options: -v dist/:/usr/src/app/dist
-  args:
-    - ${{ inputs.directory-input}}
+    with:
+      image: 'Dockerfile'
+      options: -v dist/:/usr/src/app/dist
