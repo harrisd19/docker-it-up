@@ -1,29 +1,25 @@
+import core from "@actions/core";
+import fs from "fs";
 
-import core from '@actions/core'
+let run_demo_action = async function () {
+  try {
+    const input = core.getInput("file-inputs");
 
-let run_demo_action = async function() {
-    try {
+    var fileList = [];
+    fs.readdir(binaryLocation, (err, files) => {
+      console.log(files);
+      files.forEach((file) => {
+        if (file.includes(lookup)) {
+          fileList.push(file.toString());
+        }
+      });
+    });
 
+    core.info("From the directory mounted location " + input+" we discovered these files " + fileList);
 
-      const argument = process.argv[2];
-
-      core.info(argument)
-
-      core.debug("When in debug mode, argument reads as: ", argument)
-
-      core.notice('Notice: Something happened that you might want to know about.')
-
-      core.warning('Warning: Something went wrong, but it\'s not bad enough to fail the build.')
-
-      const input = core.getInput('who-to-greet')
-
-      core.info(input)
-
-      core.debug("this is an input: ", input)
-      
-    } catch (error) {
-      core.setFailed(error.message);
-    }
+  } catch (error) {
+    core.setFailed(error.message);
   }
+};
 
-  run_demo_action();
+run_demo_action();
