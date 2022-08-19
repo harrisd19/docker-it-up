@@ -3,10 +3,10 @@ import fs from "fs";
 
 let run_demo_action = async function () {
   try {
-    const input = core.getInput("file-inputs");
+    const input = core.getInput("directory-input");
 
     var fileList = [];
-    fs.readdir(binaryLocation, (err, files) => {
+    fs.readdir(input, (err, files) => {
       console.log(files);
       files.forEach((file) => {
         if (file.includes(lookup)) {
