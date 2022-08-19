@@ -13,6 +13,8 @@ RUN npm i -g @vercel/ncc
 
 RUN npm install
 
+RUN ls -la /usr/src/app/
+
 # Code file to execute when the docker container starts up
 # Is there going to be an issue with using workflow assets from outside the container? Can I somehow copy them into the container at run-time? This may be where we need to mount a volume.
 ENTRYPOINT ["node", "/usr/src/app/dist/index.js"]
