@@ -11,3 +11,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.directory-input}}
+  volumes:
+    - ${{ inputs.directory-input}}
