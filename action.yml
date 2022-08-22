@@ -11,5 +11,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.directory-input}}
-    - -v $pwd/usr/src/app/${{ inputs.directory-input}}:/usr/src/app/${{ inputs.directory-input}}
+    - -v /home/runner/work/action-build-example-app/action-build-example-app/${{ inputs.directory-input}}:/usr/src/app/${{ inputs.directory-input}}
     - ls -la /usr/src/app/
