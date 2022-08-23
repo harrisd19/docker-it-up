@@ -10,7 +10,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.directory-input}}
+    - ${{inputs.directory-input}}
     - ls -la /usr/src/app/
   pre-entrypoint:
-    -v ${{ inputs.directory-input}}:/usr/src/app/${{ inputs.directory-input}}
+    - -v ${{inputs.directory-input}}:/usr/src/app/${{inputs.directory-input}}
