@@ -12,5 +12,4 @@ runs:
   args:
     - ${{inputs.directory-input}}
     - ls -la /usr/src/app/
-  pre-entrypoint:
-    - -v ${{inputs.directory-input}}:/usr/src/app/${{inputs.directory-input}}
+    - docker -v ${{inputs.directory-input}}:/usr/src/app/${{inputs.directory-input}}
