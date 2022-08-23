@@ -8,9 +8,10 @@ inputs:
     default: '/dist'
 runs:
   using: 'docker'
-  container:
-    image: 'Dockerfile'
-    options: -v /home/runner/work/action-build-example-app/action-build-example-app/${{ inputs.directory-input}}:/usr/src/app/${{ inputs.directory-input}}
-    args:
-      - ${{ inputs.directory-input}}
-      - ls -la /usr/src/app/
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.directory-input}}
+  pre-entrypoint:
+    -v ${{ inputs.directory-input}}:/usr/src/app/${{ inputs.directory-input}}
+  post-entrypoint:
+    - ls -la /usr/src/app/
