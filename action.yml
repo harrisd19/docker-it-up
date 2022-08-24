@@ -12,4 +12,4 @@ runs:
   args:
     - ${{inputs.directory-input}}
     - ls -la /usr/src/app/
-    - --volume ${{inputs.directory-input}}:/usr/src/app/${{inputs.directory-input}}
+    - --volume ${{inputs.directory-input}}/:/usr/src/app/${{inputs.directory-input}}/
