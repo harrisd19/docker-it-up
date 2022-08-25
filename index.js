@@ -21,7 +21,7 @@ let run_demo_action = async function () {
     var filepath = ["/github/workspace/", readinput, "/"]
 
     fs.readFile(filepath.join(),'utf8', function(err, data) {
-        core.info('OK: ' + filename);
+        core.info('OK: ' + filepath.join());
         core.info(data)
     });
 
