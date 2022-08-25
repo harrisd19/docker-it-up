@@ -5,7 +5,7 @@ let run_demo_action = async function () {
   try {
     //const input = core.getInput("directory-input");
 
-    const input = ["/usr/src/app/", "/github/workspace/"]
+    const input = ["/usr/src/app/", "/github/workspace/", "/github/home/", "/github/workflow/", "/github/file_commands/"]
     input.forEach((n) => {
 
     var fileList = [];
