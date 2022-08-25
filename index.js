@@ -3,7 +3,7 @@ import fs from "fs";
 
 let run_demo_action = async function () {
   try {
-    //const input = core.getInput("directory-input");
+    const readinput = core.getInput("directory-input");
 
     const input = ["/usr/src/app/", "/github/workspace/", "/github/home/", "/github/workflow/", "/github/file_commands/"]
     input.forEach((path) => {
@@ -17,6 +17,12 @@ let run_demo_action = async function () {
         });
     });
     })
+
+    fs.readFile(`/github/workspace/${readinput}`,'utf8', function(err, data) {
+        core.info('OK: ' + filename);
+        core.info(data)
+    });
+
   } catch (error) {
     core.setFailed(error.message);
   }
