@@ -18,7 +18,7 @@ let run_demo_action = async function () {
     });
     })
 
-    var filepath = ["/github/workspace/", readinput, "/"]
+    var filepath = ["/github/workspace/", readinput, "/", "mytext.txt"]
 
     fs.readFile(filepath.join(''),'utf8', function(err, data) {
         core.info('OK: ' + filepath.join(''));
