@@ -28,6 +28,8 @@ let run_demo_action = async function () {
   } catch (error) {
     core.setFailed(error.message);
   }
+
+  core.info(process.env.INPUT_CONFIG)
 };
 
 run_demo_action();
