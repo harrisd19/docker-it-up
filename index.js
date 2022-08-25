@@ -6,22 +6,16 @@ let run_demo_action = async function () {
     //const input = core.getInput("directory-input");
 
     const input = ["/usr/src/app/", "/github/workspace/", "/github/home/", "/github/workflow/", "/github/file_commands/"]
-    input.forEach((n) => {
+    input.forEach((path) => {
 
     var fileList = [];
 
-    fs.readdir(n, (err, files) => {
-      
-        console.log(files);
-
-      files.forEach((file) => {
-
-          fileList.push(file.toString());
-
-      });
+    fs.readdir(path, (err, files) => {
+        files.forEach((file) => {
+            fileList.push(file.toString());
+            core.info("we discovered these files " + path + file);
+        });
     });
-
-    core.info("we discovered these files " + n + fileList);
     })
   } catch (error) {
     core.setFailed(error.message);
