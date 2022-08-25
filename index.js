@@ -18,7 +18,9 @@ let run_demo_action = async function () {
     });
     })
 
-    fs.readFile(`/github/workspace/${readinput}`,'utf8', function(err, data) {
+    var filepath = ["/github/workspace/", readinput, "/"]
+
+    fs.readFile(filepath.join(),'utf8', function(err, data) {
         core.info('OK: ' + filename);
         core.info(data)
     });
