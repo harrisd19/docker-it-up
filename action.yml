@@ -8,7 +8,7 @@ inputs:
     default: '/dist'
 runs:
   using: 'docker'
-  image: 'ghcr.io/harrisd19/docker-it-up:v38'
+  image: 'docker://ghcr.io/harrisd19/docker-it-up:v38'
   args:
     - ${{inputs.directory-input}}
     - ls -la /usr/src/app/
