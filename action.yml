@@ -1,15 +1,9 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  directory-input:  # id of input
-    description: 'directory location input'
-    required: true
-    default: '/dist'
+name: 'Upload Provider'
+description: 'Uploads custom terraform provider to private registry in tf cloud'
 runs:
-  using: 'docker'
-  image: 'docker://ghcr.io/harrisd19/docker-it-up:v38'
-  args:
-    - ${{inputs.directory-input}}
-    - ls -la /usr/src/app/
-    - --volume /home/runner/work/action-build-example-app/action-build-example-app/${{inputs.directory-input}}/:/usr/src/app/${{inputs.directory-input}}/
+  using: "composite"
+  steps:
+    - shell: bash
+      env:
+        FUN_SECRET_YAY: ${{secrets.FUN_SECRET}}
+      run: echo FUN_SECRET_YAY
