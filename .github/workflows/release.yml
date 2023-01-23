@@ -19,4 +19,6 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: github.com/harrisd19/docker-it-up@main
+        uses: checkout@v2
+      - name: Run Action  
+        uses: harrisd19/docker-it-up@main
