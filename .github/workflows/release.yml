@@ -19,5 +19,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Run Action  
+      - name: Run Action
+        env:
+          FUN_SECRET_YAY: ${{secrets.FUN_SECRET}}
         uses: harrisd19/docker-it-up@main
