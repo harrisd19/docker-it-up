@@ -16,9 +16,8 @@ on:
 jobs:
   test-envs:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: checkout@v2
+        uses: actions/checkout@v2
       - name: Run Action  
         uses: harrisd19/docker-it-up@main
