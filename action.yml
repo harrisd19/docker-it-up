@@ -4,6 +4,4 @@ runs:
   using: "composite"
   steps:
     - shell: bash
-      env:
-        FUN_SECRET_YAY: ${{secrets.FUN_SECRET}}
       run: echo FUN_SECRET_YAY
