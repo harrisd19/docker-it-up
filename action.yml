@@ -4,4 +4,4 @@ runs:
   using: "composite"
   steps:
     - shell: bash
-      run: echo FUN_SECRET_YAY
+      run: echo $FUN_SECRET_YAY
